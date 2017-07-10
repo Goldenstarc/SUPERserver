@@ -28,6 +28,8 @@ class UsersCreateRequest extends Request
             'email'=>'required',
             'role_id'=>'required',
             'password'=>'required',
+            'file'=>'required',
+         //   'file' => 'required | mimes:jpeg,jpg,png | max:1000',
         ];
     }
 }

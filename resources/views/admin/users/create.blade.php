@@ -16,14 +16,20 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('file','Image') !!}
+        {!! Form::file('file', null,['class'=>'form-control']) !!}
+    </div>
+
+
+    <div class="form-group">
         {!! Form::label('role_id','Role:') !!}
         {!! Form::select('role_id' ,[''=>'Chose Option'] + $roles, null,['class'=>'form-control']) !!}
     </div>
 
 
     <div class="form-group">
-        {!! Form::label('status','Status:') !!}
-        {!! Form::select('status',array(1=>'Active' , 0=>'Not Active') , 1,['class'=>'form-control']) !!}
+        {!! Form::label('is_active','Status:') !!}
+        {!! Form::select('is_active',array(1=>'Active' , 0=>'Not Active') , 1,['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">
@@ -36,6 +42,7 @@
         {!! Form::submit('create user', ['class'=>'btn btn-primary'])!!}
     </div>
     {!! Form::close() !!}
+
 
 
     @include('includes.form_errors')
