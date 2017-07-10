@@ -5,7 +5,7 @@
 
         <div class="row">
             <div class="col-sm-3">
-                <img src="{{asset($user->photo ? $user->photo->file : (new \App\Photo())->file)}}" class="img.img-responsive.img-rounded">
+                <img height="150" src="{{asset($user->photo ? $user->photo->file : (new \App\Photo())->file)}}" class="img.img-responsive.img-rounded">
 
             </div>
 
@@ -48,12 +48,21 @@
 
 
             <div>
-                {!! Form::submit('create user', ['class'=>'btn btn-primary'])!!}
+                {!! Form::submit('Update user', ['class'=>'btn btn-primary col-sm-6'])!!}
+
             </div>
             {!! Form::close() !!}
 
 
-        </div>
+
+
+                {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminUserController@destroy' , $user->id],'class'=>'']) !!}
+                <div class="form-group">
+                    {!! Form::submit('Delete User', ['class'=>'btn btn-danger col-sm-6'])!!}
+                </div>
+                {!! Form::close() !!}
+
+
     </div>
     @include('includes.form_errors')
 

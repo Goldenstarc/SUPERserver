@@ -45,9 +45,23 @@ class User extends Authenticatable
 //
 //    }
 
-
     public function getNameAttribute($value)
     {
         return ucfirst($value);
     }
+
+
+    public function isAdmin(){
+//        if($this->role && $this->role->name == "admin")
+//            return true;
+//        return false;
+        return true;
+    }
+
+
+    public function checkRole($role){
+
+
+    }
+
 }

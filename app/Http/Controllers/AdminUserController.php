@@ -108,9 +108,6 @@ class AdminUserController extends Controller
      */
     public function update(UsersEditRequest $request, $id)
     {
-
-
-
         $user = User::findOrFail($id);
         $input = $request->all();
 
@@ -141,6 +138,11 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user-> delete();
+
+
+
+        return redirect('/admin/users');
     }
 }
