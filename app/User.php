@@ -51,12 +51,15 @@ class User extends Authenticatable
     }
 
 
-    public function isAdmin(){
-//        if($this->role && $this->role->name == "admin")
-//            return true;
-//        return false;
-        return true;
-    }
+    public function isAdmin()
+    {
+        if ($this->role && $this->role->name == 'admin' && $this->is_active == 1) {
+            return true;
+
+        }
+
+        return false;
+}
 
 
     public function checkRole($role){
