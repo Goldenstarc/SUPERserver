@@ -60,8 +60,6 @@ class User extends Authenticatable
 
         return false;
 }
-
-
     public function checkRole($role){
 
 

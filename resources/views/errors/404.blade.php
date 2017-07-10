@@ -1,1 +1,6 @@
-<h1>This Page Not Found 404 eror</h1>
+@extends('layouts.app')
+
+
+@section('content')
+    <h1 class="text-center">Opps no page available </h1>
+@stop
