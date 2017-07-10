@@ -9,7 +9,7 @@ class Photo extends Model
     //
 
     protected $uploads = '/images/';
-
+    protected $defaultImg = '/images/defaultImg.jpg';
 
     protected $fillable = ['file'];
 
@@ -17,7 +17,9 @@ class Photo extends Model
     //public getactula addres of phot ;
     public function getFileAttribute($photo){
 
-        return $this->uploads . $photo;
+        if($photo)
+            return $this->uploads . $photo;
+        return $this->defaultImg;
     }
 
 }
