@@ -26,9 +26,16 @@ Route::get('/home', 'HomeController@index');
 
 
 
+Route::resource('admin/products' , 'AdminProductsController');
+
 
 
 Route::group(['middleware'=>'admin'] , function(){
+
     Route::resource('/admin/users' , 'AdminUserController');
+
+    Route::resource('admin/posts' , 'AdminPostsController');
+
+
 
 });
