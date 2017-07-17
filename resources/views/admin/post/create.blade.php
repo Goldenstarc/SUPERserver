@@ -5,16 +5,16 @@
 @section('content')
     <h1>Create Post</h1>
 
-
-    {!! Form::open(['method'=>'POST', 'action'=> 'AdminPostsController@store' , 'file'=>true]) !!}
+    <div class="row">
+    {!! Form::open(['method'=>'POST', 'action'=> 'AdminPostsController@store' , 'files'=>true]) !!}
     <div class="form-group">
         {!! Form::label('title', 'Title') !!}
         {!! Form::text('title' , null ,['class'=>'form-control'])!!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('category_id', 'Category') !!}
-        {!! Form::select('category_id' , array(''=>'option'), null ,['class'=>'form-control'])!!}
+        {!! Form::label('catagory_id', 'Category') !!}
+        {!! Form::select('catagory_id' , array(''=>'option'), null ,['class'=>'form-control'])!!}
     </div>
 
     <div class="form-group">
@@ -32,6 +32,12 @@
         {!! Form::submit('create Post', ['class'=>'btn btn-primary'])!!}
         </div>
     {!! Form::close() !!}
+
+    </div>
+
+    <div class="row">
+        @include('includes.form_errors')
+    </div>
 @stop
 
 
