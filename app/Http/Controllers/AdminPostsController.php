@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,11 +16,13 @@ class AdminPostsController extends Controller
      */
     public function index()
     {
-        return view('admin.post.index');
+        $posts = Post::all();
+
+        return view('admin.post.index' , compact('posts'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new  resource.
      *
      * @return \Illuminate\Http\Response
      */
