@@ -26,6 +26,7 @@ class AdminPostsController extends Controller
     public function create()
     {
         //
+        return view('admin.post.create');
     }
 
     /**
@@ -59,6 +60,7 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.post.edit');
     }
 
     /**

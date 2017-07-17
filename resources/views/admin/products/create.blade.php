@@ -4,9 +4,8 @@
 
 @section('content')
 
-    <h1>this is c create page</h1>
+    <h1>products create page</h1>
 
 @stop
-
 
 

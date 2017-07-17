@@ -82,6 +82,7 @@ class AdminUserController extends Controller
     public function show($id)
     {
         //
+        //Todo fill this method
     }
 
     /**

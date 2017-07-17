@@ -15,7 +15,9 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        //
+
+
+        return view('admin.products.index');
     }
 
     /**
@@ -26,6 +28,7 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
+        return view('admin.products.create');
     }
 
     /**
@@ -58,7 +61,7 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.products.edit');
     }
 
     /**

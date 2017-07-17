@@ -53,6 +53,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
+        //Todo make this more secure and use check role get the role and then checkl is user in that role /y/n
         if ($this->role && $this->role->name == 'admin' && $this->is_active == 1) {
             return true;
 

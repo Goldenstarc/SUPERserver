@@ -113,10 +113,10 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Products<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.products.index')}}">All Posts</a>
+                                <a href="{{route('admin.products.index')}}">All Product</a>
                             </li>
                             <li>
-                                <a href="{{route('admin.products.create')}}">Create Post</a>
+                                <a href="{{route('admin.products.create')}}">Create Product</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

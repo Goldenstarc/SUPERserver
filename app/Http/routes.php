@@ -25,9 +25,8 @@ Route::get('/home', 'HomeController@index');
 //});
 
 
-
+//Todo move to amin middleware after dev
 Route::resource('admin/products' , 'AdminProductsController');
-
 
 
 Route::group(['middleware'=>'admin'] , function(){
@@ -35,7 +34,5 @@ Route::group(['middleware'=>'admin'] , function(){
     Route::resource('/admin/users' , 'AdminUserController');
 
     Route::resource('admin/posts' , 'AdminPostsController');
-
-
 
 });
