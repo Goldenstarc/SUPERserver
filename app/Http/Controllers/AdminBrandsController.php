@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\brand;
+use App\Photo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -36,9 +37,24 @@ class AdminBrandsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\BrandsCreateRequest $request)
     {
-        brand::create($request->all());
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')) {
+            $name = time(). $file->getClientOriginalName();
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+
+
+        brand::create($input);
+
+
+
+
         return redirect('admin/brands');
     }
 

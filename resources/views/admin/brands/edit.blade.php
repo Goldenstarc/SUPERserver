@@ -10,7 +10,7 @@
 
     <div class="col-sm-6">
         <h1>Brand</h1>
-        {!! Form::model($brand , ['method'=>'PATCH', 'action'=> ['AdminBrandsController@update',$brand->id]]) !!}
+        {!! Form::model($brand , ['method'=>'PATCH', 'action'=> ['AdminBrandsController@update',$brand->id], 'files'=>true]) !!}
         <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name' , null ,['class'=>'form-control'])!!}

@@ -6,7 +6,7 @@
 
     <div class="col-sm-6">
         <h1>Brands</h1>
-        {!! Form::open(['method'=>'POST', 'action'=> 'AdminBrandsController@store']) !!}
+        {!! Form::open(['method'=>'POST', 'action'=> 'AdminBrandsController@store' , 'files'=>true]) !!}
         <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name' , null ,['class'=>'form-control'])!!}
@@ -27,7 +27,9 @@
         </div>
 
         {!! Form::close() !!}
-
+        <div class="row">
+            @include('includes.form_errors')
+        </div>
 
     </div>
 
