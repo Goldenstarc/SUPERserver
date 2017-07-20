@@ -34,6 +34,8 @@ elixir(function(mix) {
 
             ] , './public/js/libs.js')
 
+
+        .copy('resources/assets/fonts', 'public/fonts');
 });
 
 
