@@ -17,10 +17,11 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('productCatagory_id')->unsigned()->index();
             $table->integer('photo_id')->unsigned()->index();
+            $table->integer('brand_id')->unsigned()->index();
             $table->string('name');
             $table->string('manifactor');
-            $table->text('shortdiscription');
-            $table->text('longdiscription');
+            $table->text('short_description');
+            $table->text('long_description');
             $table->timestamp('prodate');
             $table->timestamp('expdate');
             $table->timestamps();

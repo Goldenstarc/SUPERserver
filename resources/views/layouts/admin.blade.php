@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Baghali Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
@@ -135,18 +135,18 @@
                         <!-- /.nav-second-level -->
                     </li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Media<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">All Media</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">Create Media</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> Media<span class="fa arrow"></span></a>--}}
+                        {{--<ul class="nav nav-second-level">--}}
+                            {{--<li>--}}
+                                {{--<a href="panels-wells.html">All Media</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="buttons.html">Create Media</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<!-- /.nav-second-level -->--}}
+                    {{--</li>--}}
 
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
