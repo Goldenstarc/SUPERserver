@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Home</a>
+            <a class="navbar-brand" href="{{ url('/admin') }}">Home</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -128,12 +128,26 @@
                             <li>
                                 <a href="{{route('admin.categories.index')}}">All Categories</a>
                             </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Brands<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.categories.create')}}">Create Category</a>
+                                <a href="{{route('admin.brands.index')}}">Add Brands</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+
+
+
 
                     {{--<li>--}}
                         {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> Media<span class="fa arrow"></span></a>--}}
