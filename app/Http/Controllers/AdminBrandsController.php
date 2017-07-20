@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\barand;
+use App\brand;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AdminBarandsController extends Controller
+class AdminBrandsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class AdminBarandsController extends Controller
      */
     public function index()
     {
-        $barands = Barand::all();
-        return view('admin.barands.index' , compact('barands'));
+        $brands = brand::all();
+        return view('admin.brands.index' , compact('brands'));
     }
 
     /**
@@ -25,10 +25,10 @@ class AdminBarandsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+//    public function create()
+//    {
+//        //
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,7 +38,8 @@ class AdminBarandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        brand::create($request->all());
+        return redirect('admin/brands');
     }
 
     /**
@@ -47,10 +48,10 @@ class AdminBarandsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+//    public function show($id)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -60,7 +61,9 @@ class AdminBarandsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = brand::findOrFail($id);
+        //return $category;
+        return view('admin.brands.edit' , compact('brand'));
     }
 
     /**
@@ -72,7 +75,10 @@ class AdminBarandsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $brand = brand::findOrFail($id);
+        $brand->update($request->all());
+
+        return redirect('/admin/brands');
     }
 
     /**
@@ -83,6 +89,7 @@ class AdminBarandsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        brand::findOrFail($id)->delete();
+        return redirect('/admin/brands');
     }
 }

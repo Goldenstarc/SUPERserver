@@ -5,8 +5,8 @@
 @section('content')
 
     <div class="col-sm-6">
-        <h1>Barands</h1>
-        {!! Form::open(['method'=>'POST', 'action'=> 'AdminCategoriesController@store']) !!}
+        <h1>Brands</h1>
+        {!! Form::open(['method'=>'POST', 'action'=> 'AdminBrandsController@store']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name' , null ,['class'=>'form-control'])!!}
@@ -15,6 +15,11 @@
         <div class="form-group">
             {!! Form::label('url', 'WebSite:') !!}
             {!! Form::text('url' , null ,['class'=>'form-control'])!!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('photo_id', 'Photo:') !!}
+            {!! Form::file('photo_id' , null,['class'=>'form-control'])!!}
         </div>
 
         <div class="form-group">
@@ -40,14 +45,14 @@
             </thead>
             <tbody>
 
-            @if($barands)
-                @foreach($barands as $barand)
+            @if($brands)
+                @foreach($brands as $brand)
                     <tr>
-                        <td></td>
-                        <td>{{$barand->id}}</td>
-                        <td><a href="{{route('admin.barands.edit', $barand->id)}}">{{$barand->name}} </a></td>
-                        <td><a href="{{$barand->url}}"></a> </td>
-                        <td>{{$cat->created_at->diffForHumans()}}</td>
+                        <td><img height="50" src="{{asset($brand->photo ? $brand->photo->file : (new \App\Photo())->file)}}"></td>
+                        <td>{{$brand->id}}</td>
+                        <td><a href="{{route('admin.brands.edit', $brand->id)}}">{{$brand->name}} </a></td>
+                        <td><a href="{{$brand->url}}">{{$brand->url}}  </a> </td>
+                        <td>{{$brand->created_at->diffForHumans()}}</td>
                     </tr>
                 @endforeach
             </tbody>
