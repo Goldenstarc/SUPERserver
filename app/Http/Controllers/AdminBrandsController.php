@@ -91,8 +91,25 @@ class AdminBrandsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = $request->all();
+
         $brand = brand::findOrFail($id);
-        $brand->update($request->all());
+
+
+
+
+        if($file = $request->file('photo_id')) {
+            $name = time(). $file->getClientOriginalName();
+            $file->move('images',$name);
+
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+
+
+
+
+        $brand->update($input);
 
         return redirect('/admin/brands');
     }
