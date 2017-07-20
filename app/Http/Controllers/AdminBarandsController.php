@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\barand;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,8 @@ class AdminBarandsController extends Controller
      */
     public function index()
     {
-
+        $barands = Barand::all();
+        return view('admin.barands.index' , compact('barands'));
     }
 
     /**
