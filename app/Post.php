@@ -34,5 +34,10 @@ class Post extends Model
 
     }
 
+    //Todo change catagory to category here and in database and in html
+//    public function catagory(){
+//        return $this->belongsTo('App\Category');
+//
+//    }
 
 }

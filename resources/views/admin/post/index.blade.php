@@ -11,9 +11,9 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Photo</th>
             <th>Owner</th>
             <th>Category</th>
-            <th>Photo</th>
             <th>title</th>
             <th>body</th>
             <th>Created</th>
@@ -26,9 +26,9 @@
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post->id}}</td>
+                    <td><img height="50" src="{{asset($post->photo ? $post->photo->file : (new \App\Photo())->file)}}"></td>
                     <td>{{$post->user->name}}</td>
-                    <td>{{$post->category_id}}</td>
-                    <td>{{$post->photo_id}}</td>
+                    <td>{{$post->category ? $post->category->name : 'Uncategorized!)'}}</td>      <!-- TODO change category to gategory in data base and here-->
                     <td>{{$post->title}}</td>
                     <td>{{$post->body}}</td>
                     <td>{{$post->created_at->diffForHumans()}}</td>
