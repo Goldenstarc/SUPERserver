@@ -23,14 +23,25 @@ class Product extends Model
     ];
 
 
+    public function user(){
+
+        return $this->belongsTo('App\User');
+    }
 
 
     public function category()
     {
-        return $this->hasOne('Categories', 'id', 'Category_id');
+        return $this->hasOne('App\Category', 'id', 'Category_id');
     }
 
     public function specifications(){
         return $this->hasMany('App\Comments', 'product_id');
+    }
+
+
+
+    public function photo(){
+        return $this->belongsTo('App\Photo');
+
     }
 }

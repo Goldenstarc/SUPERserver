@@ -12,10 +12,8 @@
         <tr>
             <th>Id</th>
             <th>Photo</th>
-            <th>Owner</th>
+            <th>create by</th>
             <th>Category</th>
-            <th>title</th>
-            <th>body</th>
             <th>Created</th>
             <th>Updated</th>
             <th>price</th>
@@ -32,17 +30,15 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td><img height="50" src="{{asset($product->photo ? $product->photo->file : (new \App\Photo())->file)}}"></td>
-                    <td><a href="{{route('admin.posts.edit', $product->id)}}">{{$product->user->name}} </a></td>
+                    <td><a href="{{route('admin.products.edit', $product->id)}}">{{$product->user->name}} </a></td>
                     <td>{{$product->category ? $product->category->name : 'Uncategorized!)'}}</td>
-                    <td>{{$product->title}}</td>
-                    <td>{{str_limit($product->body,30)}}</td>
                     <td>{{$product->created_at->diffForHumans()}}</td>
                     <td>{{$product->updated_at->diffForHumans() }}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->min_price}}</td>
                     <td>{{$product->off}}</td>
-                    <td>{{$product->short_description}}</td>
-                    <td>{{$product->long_description}}</td>
+                    <td>{{str_limit($product->short_description,50)}}</td>
+                    <td>{{str_limit($product->long_description,75)}}</td>
                 </tr>
             @endforeach
         </tbody>
