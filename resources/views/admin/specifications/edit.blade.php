@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('update Category', ['class'=>'btn btn-primary col-sm-6'])!!}
+                {!! Form::submit('update Specification', ['class'=>'btn btn-primary col-sm-6'])!!}
             </div>
             {!! Form::close() !!}
 
@@ -33,7 +33,7 @@
 
             {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminProductSpecificationController@destroy',$specification->id]]) !!}
             <div class="form-group">
-                {!! Form::submit('Delete Category', ['class'=>'btn btn-danger col-sm-6'])!!}
+                {!! Form::submit('Delete Specification', ['class'=>'btn btn-danger col-sm-6'])!!}
             </div>
             {!! Form::close() !!}
             </div>

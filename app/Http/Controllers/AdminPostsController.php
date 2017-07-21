@@ -99,7 +99,7 @@ class AdminPostsController extends Controller
         $input = $request->all();
 
 
-        //Todo something remains here after change image shold delete old image from database I think but thats is correct...
+        //Todo something remains here after change image should delete old image from database I think but thats is correct...
         if($file = $request->file('photo_id')) {
             $name = time() . $file->getClientOriginalName();
             $file->move('images' , $name);

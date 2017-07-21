@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\brand;
+use App\Category;
+use App\Photo;
+use App\Product;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class AdminProductsController extends Controller
 {
@@ -15,9 +20,9 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
+        $products = Product::all();
 
-
-        return view('admin.products.index');
+        return view('admin.products.index' , compact('products'));
     }
 
     /**
@@ -27,8 +32,9 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.products.create');
+        $categories = Category::lists('name' , 'id')->all();
+        $brands = brand::lists('name' , 'id')->all();
+        return view('admin.products.create' , compact('categories' , 'brands'));
     }
 
     /**
@@ -39,7 +45,21 @@ class AdminProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $input = $request->all();
+        $user = Auth::user();
+
+        if($file = $request->file('photo_id')) {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images' , $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+
+        $input['user_id'] = $user ->id;
+
+        Product::create($input);
+        return redirect('/admin/products');
     }
 
     /**
@@ -61,6 +81,9 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::lists('name' , 'id')->all();
+
+
         return view('admin.products.edit');
     }
 
