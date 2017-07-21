@@ -140,7 +140,19 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Brands<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.brands.index')}}">Add Brands</a>
+                                <a href="{{route('admin.brands.index')}}">All Brands</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Specification<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.psf.index')}}">All Specifications</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
