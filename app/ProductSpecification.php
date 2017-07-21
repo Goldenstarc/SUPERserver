@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductSpecification extends Model
 {
 
-    public static $types  = array('integer', 'string' , 'float' , 'timestamp');
+    public static $types  = array('','integer', 'string' , 'float' , 'timestamp');
 
     protected $fillable = [
         'user_id',

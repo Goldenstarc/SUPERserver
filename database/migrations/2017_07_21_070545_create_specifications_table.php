@@ -16,6 +16,7 @@ class CreateSpecificationsTable extends Migration
             $table->increments('id');
             $table->integer('product_specification_id')->unsigned()->index();
             $table->string('value');
+            $table->integer('product_id')->unsigned()->index();;
             $table->timestamps();
 
 
