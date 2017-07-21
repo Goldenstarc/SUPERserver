@@ -27,7 +27,7 @@ class CreateProductsRequest extends Request
             'Category_id'=>'required',
             'name' => 'required|Between:5,75',
             'code'=> 'required|Between:11,15',
-            'photo_id'=> 'required',
+            'photo_id'=> '',
             'brand_id'=> 'Integer|required',
             'price'=> 'numeric|required',
             'min_price'=> 'numeric|required',

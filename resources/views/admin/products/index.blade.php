@@ -12,7 +12,8 @@
         <tr>
             <th>Id</th>
             <th>Photo</th>
-            <th>create by</th>
+            <th>name</th>
+            <th>update by</th>
             <th>Category</th>
             <th>Created</th>
             <th>Updated</th>
@@ -30,6 +31,7 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td><img height="50" src="{{asset($product->photo ? $product->photo->file : (new \App\Photo())->file)}}"></td>
+                    <td>{{$product->name}}</td>
                     <td><a href="{{route('admin.products.edit', $product->id)}}">{{$product->user->name}} </a></td>
                     <td>{{$product->category ? $product->category->name : 'Uncategorized!)'}}</td>
                     <td>{{$product->created_at->diffForHumans()}}</td>

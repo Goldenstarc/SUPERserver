@@ -82,9 +82,9 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         $categories = Category::lists('name' , 'id')->all();
-
-
-        return view('admin.products.edit');
+        $brands = brand::lists('name' , 'id')->all();
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit', compact('categories' ,'brands','product' ));
     }
 
     /**
@@ -94,9 +94,31 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\CreateProductsRequest $request, $id)
     {
-        //
+
+        $input = $request->all();
+        $user = Auth::user();
+
+        if($file = $request->file('photo_id')) {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images' , $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+
+        $input['user_id'] = $user ->id;
+
+
+
+
+        $product = Product::findOrFail($id);
+
+
+        $product->update($request->all());
+
+        return redirect('/admin/products');
+
     }
 
     /**
