@@ -18,7 +18,7 @@
 
                 <div class="form-group">
                     {!! Form::label('parent_category_id', 'Parent Category:') !!}
-                    {!! Form::select('parent_category_id' , [ 0=>'chose categories'] + ($categories->pluck('name', 'id')->all()) , null ,['class'=>'form-control'])!!}
+                    {!! Form::select('parent_category_id' , [0=>'chose categories'] + ($categories->pluck('name', 'id')->all()) , null ,['class'=>'form-control'])!!}
                 </div>
 
 

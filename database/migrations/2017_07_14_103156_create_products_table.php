@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->integer('photo_id')->unsigned()->index();
             $table->integer('brand_id')->unsigned()->index();
             $table->string('name');
-            $table->string('manifactor');
             $table->text('short_description');
             $table->text('long_description');
             $table->timestamp('prodate');

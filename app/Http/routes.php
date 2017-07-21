@@ -36,6 +36,9 @@ Route::group(['middleware'=>'admin'] , function(){
 
     Route::resource('admin/brands' , 'AdminBrandsController');
 
+    Route::resource('admin/psf' , 'AdminProductSpecificationController');
+
+
     Route::get('/admin' , function (){
         return view('admin.index');
     });
