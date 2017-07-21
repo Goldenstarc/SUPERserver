@@ -20,7 +20,12 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
+Route::get('/app', function (){
 
+
+    return \App\Product::all();
+
+});
 
 //Todo move to amin middleware after dev
 Route::resource('admin/products' , 'AdminProductsController');
