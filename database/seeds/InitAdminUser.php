@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,10 @@ class InitAdminUser extends Seeder
                 'is_active'=>1,
                 'role_id'=>1,
                 'password' => bcrypt('@BaghaliMoonSuperServer'),
+                'updated_at'=>Carbon::now(),
+                'created_at'=>Carbon::now(),
+
+
             ]);
     }
 }

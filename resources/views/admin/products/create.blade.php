@@ -68,7 +68,7 @@
 
 
         <div class="form-group col-sm-6">
-            {!! Form::submit('create Post', ['class'=>'btn btn-primary'])!!}
+            {!! Form::submit('create Product', ['class'=>'btn btn-primary'])!!}
         </div>
         {!! Form::close() !!}
 
