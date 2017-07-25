@@ -24,6 +24,7 @@
         </thead>
         <tbody>
 
+
         @if($users)
             @foreach($users as $user)
                 <tr>
