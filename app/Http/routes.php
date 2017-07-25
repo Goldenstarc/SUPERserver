@@ -27,8 +27,8 @@ Route::get('/app', function (){
 
 });
 
-//Todo move to amin middleware after dev
-Route::resource('admin/products' , 'AdminProductsController');
+
+
 
 
 Route::group(['middleware'=>'admin'] , function(){
@@ -43,6 +43,8 @@ Route::group(['middleware'=>'admin'] , function(){
 
     Route::resource('admin/psf' , 'AdminProductSpecificationController');
 
+
+    Route::resource('admin/products' , 'AdminProductsController');
 
     Route::get('/admin' , function (){
         return view('admin.index');

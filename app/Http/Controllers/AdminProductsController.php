@@ -51,7 +51,8 @@ class AdminProductsController extends Controller
 
         if($file = $request->file('photo_id')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('images' , $name);
+
+
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
