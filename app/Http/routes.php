@@ -43,10 +43,10 @@ Route::group(['middleware'=>'admin'] , function(){
 
     Route::resource('admin/psf' , 'AdminProductSpecificationController');
 
-
     Route::resource('admin/products' , 'AdminProductsController');
 
     Route::get('/admin' , function (){
         return view('admin.index');
+        return view('admin.aboutpjax');
     });
 });

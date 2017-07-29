@@ -83,7 +83,8 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.users.index')}}">All Users</a>
+                            <li><a href="javascript:ajaxLoad('{{route('admin.users.index')}}')">View 1</a></li>
+                                {{--<a href="{{route('admin.users.index')}}">All Users</a>--}}
                             </li>
                             <li>
                                 <a href="{{route('admin.users.create')}}">Create User</a>
@@ -186,6 +187,8 @@
                         <!-- /.nav-second-level -->
                     </li>
 
+
+
                                                             {{--this m4 comment page--}}
                                                         {{--<li>--}}
                                                             {{--<a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>--}}
@@ -271,7 +274,11 @@
             <div class="row">
                 <div class="col-lg-12">
                    <!-- <h1 class="page-header">Dashboard</h1> -->
+                    <div id="content">
+
+
                     @yield('content')
+                    </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -286,6 +293,51 @@
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<!-- JavaScripts -->
+{{--<script>--}}
+    {{--function ajaxLoad(filename, content) {--}}
+        {{--content = typeof content !== 'undefined' ? content : 'content';--}}
+        {{--$('.loading').show();--}}
+        {{--$.ajax({--}}
+            {{--type: "GET",--}}
+            {{--url: filename,--}}
+            {{--contentType: false,--}}
+            {{--success: function (data) {--}}
+                {{--$("#" + content).html(data);--}}
+                {{--$('.loading').hide();--}}
+                {{--alert("External content loaded successfully!");--}}
+            {{--},--}}
+            {{--error: function (xhr, status, error) {--}}
+                {{--alert(xhr.responseText);--}}
+            {{--}--}}
+        {{--});--}}
+    {{--}--}}
+{{--</script>--}}
+
+{{--<script>--}}
+    {{--$("#document").pjax('a','#content');--}}
+{{--</script>--}}
+
+
+<script type="text/javascript">
+    $(function(){
+        // pjax
+        $(document).pjax('a', '#content')
+    })
+    $(document).ready(function(){
+
+        // does current browser support PJAX
+        if ($.support.pjax) {
+            $.pjax.defaults.timeout = 2000; // time in milliseconds
+        }
+
+    });
+</script>
+
+
+
 
 </body>
 
