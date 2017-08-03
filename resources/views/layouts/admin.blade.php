@@ -23,6 +23,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    {{--when want to test ajax paje state--}}
+    {{--<div>{{time()}}</div>--}}
+
+
+
 </head>
 
 <body id="admin-page">
@@ -83,8 +89,8 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                            <li><a href="javascript:ajaxLoad('{{route('admin.users.index')}}')">View 1</a></li>
-                                {{--<a href="{{route('admin.users.index')}}">All Users</a>--}}
+                            {{--<li><a href="javascript:ajaxLoad('{{route('admin.users.index')}}')">View 1</a></li>--}}
+                                <a href="{{route('admin.users.index')}}">All Users</a>
                             </li>
                             <li>
                                 <a href="{{route('admin.users.create')}}">Create User</a>
@@ -289,10 +295,23 @@
     <!-- /#page-wrapper -->
 
 </div>
+
+
+<div class="container">
+    <section>
+        <div id="map">
+        </div>
+    </section>
+    <footer class="primary "><div>footer -> {{time()}}</div></footer>
+</div>
+
+
 <!-- /#wrapper -->
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
+
+{{--Todo remove this and ro gulp--}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 
 <!-- JavaScripts -->
