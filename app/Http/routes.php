@@ -23,6 +23,13 @@ Route::get('/home', 'HomeController@index');
 Route::get('/app', function (){
 
 
+    $products = \App\Product::all();
+    foreach($products as  $product){
+        $product->photo_id = $product->photo ? $product->photo->file:"";
+
+    }
+
+    return $products;
     return \App\Product::all();
 
 });
